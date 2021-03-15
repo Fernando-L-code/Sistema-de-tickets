@@ -20,7 +20,7 @@
 
         }
 
-        public function ruta (){
+        public static function ruta () {
             return "http://localhost/proyecto/";
         }
     }
