@@ -1,6 +1,9 @@
 <?php
-    if ($_SESSION["rol_id"]==2){
+    $_SESSION["rol_id"]==1;
+    if ( true){
         ?>
+
+
             <nav class="side-menu">
                 <ul class="side-menu-list">
                     <li class="blue-dirty">

@@ -1,10 +1,11 @@
 <header class="site-header">
     <div class="container-fluid">
 
-        <a href="#" class="site-logo">
+        <!-- logo -->
+        <!-- <a href="#" class="site-logo">
             <img class="hidden-md-down" src="../../public/img/logo-2.png" alt="">
             <img class="hidden-lg-up" src="../../public/img/logo-2-mob.png" alt="">
-        </a>
+        </a> -->
 
         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
             <span>toggle menu</span>
@@ -32,13 +33,14 @@
 
                 <div class="mobile-menu-right-overlay"></div>
 
-                <!-- <input type="hidden" id="user_idx" value="<?php echo $_SESSION["usu_id"] ?>">ID del Usuario -->
+                <!-- ID del Usuario -->
+                <input type="hidden" id="user_idx" value="<?php echo $_SESSION["user_id"] ?>">
                 <!-- <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["rol_id"] ?>">Rol del Usuario -->
 
                 <div class="dropdown dropdown-typical">
                     <a href="#" class="dropdown-toggle no-arr">
                         <span class="font-icon font-icon-user"></span>
-                        <!-- <span class="lblcontactonomx"><?php echo $_SESSION["usu_nom"] ?> <?php echo $_SESSION["usu_ape"] ?></span> -->
+                        <span class="lblcontactonomx"><?php echo $_SESSION["user_name"] ?></span>
                     </a>
                 </div>
 
