@@ -22,7 +22,8 @@ $(document).ready(function() {
         }
     });
 
-    $.post("../../controller/categoria.php?op=combo",function(data, status){
+    $.post("../../controller/categoria.php?options=combo",function(data, status){
+        console.log(data);
         $('#cat_id').html(data);
     });
 

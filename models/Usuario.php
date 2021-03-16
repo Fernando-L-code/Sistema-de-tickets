@@ -3,8 +3,8 @@
     class Usuario extends Connect{
         public function login(){
             $connect= parent::Conexion();
-
             parent::set_names();
+
             if(isset($_POST["enviar"])){
                 $email = $_POST["user_email"];
                 $password = $_POST["user_password"];
@@ -32,3 +32,4 @@
             }
         }
     }
+?>
