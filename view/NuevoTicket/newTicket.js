@@ -8,7 +8,7 @@ function init(){
 }
 
 $(document).ready(function() {
-    $('#tick_descrip').summernote({
+    $('#ticket_description').summernote({
         height: 150,
         lang: "es-ES",
         callbacks: {
@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     $.post("../../controller/categoria.php?options=combo",function(data, status){
         console.log(data);
-        $('#cat_id').html(data);
+        $('#categori_id').html(data);
     });
 
 });
@@ -32,18 +32,18 @@ $(document).ready(function() {
 function guardaryeditar(e){
     e.preventDefault();
     var formData = new FormData($("#ticket_form")[0]);
-    if ($('#tick_descrip').summernote('isEmpty') || $('#tick_titulo').val()==''){
+    if ($('#ticket_description').summernote('isEmpty') || $('#ticket_title').val()==''){
         swal("Advertencia!", "Campos Vacios", "warning");
     }else{
         $.ajax({
-            url: "../../controller/ticket.php?op=insert",
+            url: "../../controller/ticket.php?options=insert",
             type: "POST",
             data: formData,
             contentType: false,
             processData: false,
             success: function(datos){  
-                $('#tick_titulo').val('');
-                $('#tick_descrip').summernote('reset');
+                $('#ticket_title').val('');
+                $('#ticket_description').summernote('reset');
                 swal("Correcto!", "Registrado Correctamente", "success");
             }  
         }); 

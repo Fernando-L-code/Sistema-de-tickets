@@ -43,26 +43,26 @@
 				<div class="row">
 					<form method="post" id="ticket_form">
 
-						<input type="hidden" id="usu_id" name="usu_id" value="<?php echo $_SESSION["user_id"] ?>">
+						<input type="hidden" id="user_id" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
 
 						<div class="col-lg-6">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="exampleInput"  >Categoria</label>
-								<select id="cat_id" name="cat_id" class="form-control" >
+								<label class="form-label semibold" for="categori_id"  >Categoria</label>
+								<select id="categori_id" name="categori_id" class="form-control" >
 								</select>
 							</fieldset>
 						</div>
 						<div class="col-lg-6">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="tick_titulo">Titulo</label>
-								<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Titulo">
+								<label class="form-label semibold" for="ticket_title">Titulo</label>
+								<input type="text" class="form-control" id="ticket_title" name="ticket_title" placeholder="Ingrese Titulo">
 							</fieldset>
 						</div>
 						<div class="col-lg-12">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="tick_descrip">Descripción</label>
+								<label class="form-label semibold" for="ticket_description">Descripción</label>
 								<div class="summernote-theme-1" >
-									<textarea id="tick_descrip" name="tick_descrip" class="summernote" name="name"></textarea>
+									<textarea id="ticket_description" name="ticket_description" class="summernote" name="name"></textarea>
 								</div>
 							</fieldset>
 						</div>
