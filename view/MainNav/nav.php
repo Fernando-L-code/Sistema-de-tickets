@@ -1,6 +1,6 @@
 <?php
-    $_SESSION["rol_id"]==1;
-    if ( true){
+    
+    if ($_SESSION["user_rol"]==1){
         ?>
 
 

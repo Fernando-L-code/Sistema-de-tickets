@@ -35,7 +35,8 @@
 
                 <!-- ID del Usuario -->
                 <input type="hidden" id="user_idx" value="<?php echo $_SESSION["user_id"] ?>">
-                <!-- <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["rol_id"] ?>">Rol del Usuario -->
+                <!-- Rol del Usuario -->
+                <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["user_rol"] ?>">
 
                 <div class="dropdown dropdown-typical">
                     <a href="#" class="dropdown-toggle no-arr">
