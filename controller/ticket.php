@@ -17,8 +17,14 @@
                 $sub_array[] = $row["ticket_id"];
                 $sub_array[] = $row["categori_name"];
                 $sub_array[] = $row["ticket_title"];
-                $sub_array[] = '<button type="button" onClick="ver('.$row["ticket_id"].');"  id="'.$row["ticket_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
+                if($row["ticket_status"]=='Nuevo'){
+
+                    $sub_array[] = '<span class="label label-pill label-success">Nuevo</span>';
+                }else{
+                    $sub_array[] = '<span class="label label-pill label-danger">terminado</span>';
+                }
                 $sub_array[] = date("d/m/Y H:i:s", strtotime($row["date_create"]));
+                $sub_array[] = '<button type="button" onClick="ver('.$row["ticket_id"].');"  id="'.$row["ticket_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
                 $data[] = $sub_array;
             }
             $results = array(
@@ -39,8 +45,16 @@
                 $sub_array[] = $row["ticket_id"];
                 $sub_array[] = $row["categori_name"];
                 $sub_array[] = $row["ticket_title"];
-                $sub_array[] = '<button type="button" onClick="ver('.$row["ticket_id"].');"  id="'.$row["ticket_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
+
+                if($row["ticket_status"]=='Nuevo'){
+
+                    $sub_array[] = '<span class="label label-pill label-success">Nuevo</span>';
+                }else{
+                    $sub_array[] = '<span class="label label-pill label-danger">terminado</span>';
+                }
+
                 $sub_array[] = date("d/m/Y H:i:s", strtotime($row["date_create"]));
+                $sub_array[] = '<button type="button" onClick="ver('.$row["ticket_id"].');"  id="'.$row["ticket_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
                 $data[] = $sub_array;
             }
             $results = array(

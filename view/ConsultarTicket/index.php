@@ -42,7 +42,7 @@
 							<th class="d-none d-sm-table-cell" style="width: 40%;">Titulo</th>
 							<th class="d-none d-sm-table-cell" style="width: 5%;">Estado</th>
 							<th class="d-none d-sm-table-cell" style="width: 10%;">Fecha Creación</th>
-							<!-- <th class="text-center" style="width: 5%;"></th> -->
+							<th class="text-center" style="width: 5%;"></th>
 						</tr>
 					</thead>
 					<tbody>
