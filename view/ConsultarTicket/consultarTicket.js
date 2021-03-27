@@ -126,5 +126,5 @@ function ver(ticket_id){
     console.log(ticket_id);
 }
 
-console.log("e");
+// console.log("e");
 init();

@@ -69,4 +69,26 @@ class Ticket extends Connect
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
+
+    public function listTicketDetailByTicket($ticket_id)
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT
+        td_ticketdetalle.detail_id,
+        td_ticketdetalle.ticket_id,
+        td_ticketdetalle.ticket_description,
+        td_ticketdetalle.date_create,
+        tm_usuario.user_name,
+        tm_usuario.user_rol
+        FROM 
+        td_ticketdetalle
+        INNER join tm_usuario on td_ticketdetalle.user_id = tm_usuario.user_id
+        WHERE 
+        ticket_id =?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $ticket_id);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 }
