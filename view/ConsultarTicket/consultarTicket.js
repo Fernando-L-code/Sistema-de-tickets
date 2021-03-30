@@ -124,6 +124,7 @@ $(document).ready(function () {
 
 function ver(ticket_id){
     console.log(ticket_id);
+    window.open("http://localhost:80/proyecto/view/Detalleticket/?ID="+ticket_id+"")
 }
 
 // console.log("e");

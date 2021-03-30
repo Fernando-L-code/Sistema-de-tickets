@@ -91,4 +91,28 @@ class Ticket extends Connect
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
+
+    public function listTicketById($ticket_id){
+        $conectar= parent::conexion();
+        parent::set_names();
+        $sql="SELECT 
+            tm_ticket.ticket_id ,
+            tm_ticket.user_id, 
+            tm_ticket.categori_id, 
+            tm_ticket.ticket_title, 
+            tm_ticket.ticket_description, 
+            tm_ticket.ticket_status, 
+            tm_ticket.date_create, 
+            tm_usuario.user_name, 
+            tm_categoria.categori_name 
+            FROM tm_ticket 
+            INNER join tm_categoria on tm_ticket.categori_id = tm_categoria.categori_id 
+            INNER join tm_usuario on tm_ticket.user_id = tm_usuario.user_id 
+            WHERE tm_ticket.status = 1 
+            AND tm_ticket.ticket_id = ?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1, $ticket_id);
+        $sql->execute();
+        return $resultado=$sql->fetchAll();
+    }
 }

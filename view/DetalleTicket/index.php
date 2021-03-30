@@ -5,7 +5,7 @@ if (isset($_SESSION["user_id"])) {
   <!DOCTYPE html>
   <html>
   <?php require_once("../MainHead/head.php"); ?>
-  <title>AnderCode</>::Detalle Ticket</title>
+  <title>Detail</>::Detalle Ticket</title>
   </head>
 
   <body class="with-side-menu">
@@ -67,9 +67,9 @@ if (isset($_SESSION["user_id"])) {
           </div>
         </div>
 
-        <!-- <section class="activity-line" id="lbldetalle">
+        <section class="activity-line" id="lbldetalle">
 
-        </section> -->
+        </section>
 
         <div class="box-typical box-typical-padding" id="pnldetalle">
           <p>
