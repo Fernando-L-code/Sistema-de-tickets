@@ -24,7 +24,7 @@ if (isset($_SESSION["user_id"])) {
           <div class="tbl">
             <div class="tbl-row">
               <div class="tbl-cell">
-                <h3 id="lblnomidticket">Detalle Ticket - 1</h3>
+                <h3 id="lblnomidticket"></h3>
                 <div id="lblestado"></div>
                 <span class="label label-pill label-primary" id="lblnomusuario"></span>
                 <span class="label label-pill label-default" id="lblfechcrea"></span>

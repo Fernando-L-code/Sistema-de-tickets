@@ -45,6 +45,7 @@
                 $sub_array[] = $row["ticket_id"];
                 $sub_array[] = $row["categori_name"];
                 $sub_array[] = $row["ticket_title"];
+                $sub_array[] = $row["ticket_description"];
 
                 if($row["ticket_status"]=='Nuevo'){
 

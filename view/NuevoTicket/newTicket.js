@@ -42,11 +42,13 @@ function guardaryeditar(e){
             contentType: false,
             processData: false,
             success: function(datos){  
+                // console.log(datos);
                 $('#ticket_title').val('');
                 $('#ticket_description').summernote('reset');
                 swal("Correcto!", "Registrado Correctamente", "success");
             }  
         }); 
+
     }
 }
 

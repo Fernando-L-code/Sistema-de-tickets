@@ -8,14 +8,16 @@ class Ticket extends Connect
         $connect = parent::Conexion();
         parent::set_names();
 
-        $sql = "INSERT INTO tm_ticket (ticket_id, user_id, categori_id, ticket_title, ticket_description, ticket_status,date_create, status) 
-        VALUES (NULL, ?, ?, ?, ?,Nuevo, now(), '1');";
+        $sql = "INSERT INTO tm_ticket (ticket_id, user_id, categori_id, ticket_title, ticket_description, ticket_status, date_create, status) 
+        VALUES (NULL, ?, ?, ?, ?,'Nuevo', now(), '1');";
+
+        //         INSERT INTO `tm_ticket` (`ticket_id`, `user_id`, `categori_id`, `ticket_title`, `ticket_description`, `ticket_status`, `date_create`, `status`)
+        //  VALUES (NULL, '1', '2', 'asd', 'asdadasd', 'Nuevo', '2021-03-30 23:31:56', '1')
         $sql = $connect->prepare($sql);
         $sql->bindValue(1, $user_id);
         $sql->bindValue(2, $categori_id);
         $sql->bindValue(3, $ticket_title);
         $sql->bindValue(4, $ticket_description);
-
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }

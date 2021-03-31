@@ -103,11 +103,11 @@ function listardetalle(ticket_id){
         $('#lblnomusuario').html(data.user_name);
         $('#lblfechcrea').html(data.date_create);
         
-        // $('#lblnomidticket').html("Detalle Ticket - "+data.ticket_id);
+        $('#lblnomidticket').html("Detalle Ticket - "+data.ticket_id);
 
-        // $('#cat_nom').val(data.cat_nom);
-        // $('#tick_titulo').val(data.tick_titulo);
-        // $('#tickd_descripusu').summernote ('code',data.tick_descrip);
+        $('#cat_nom').val(data.categori_name);
+        $('#tick_titulo').val(data.ticket_title);
+        $('#tickd_descripusu').summernote ('code',data.ticket_description);
 
         // console.log( data.tick_estado_texto);
         // if (data.tick_estado_texto == "Cerrado"){
