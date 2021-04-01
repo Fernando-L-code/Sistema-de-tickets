@@ -46,14 +46,14 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).on("click","#btnenviar", function(){
-    var ticket_id = getUrlParameter('ID');
-    var usu_id = $('#user_idx').val();
-    var tickd_descrip = $('#tickd_descrip').val();
+    var ticket_id = getUrlParameter('ID') ;
+    var user_id = $('#user_idx').val();
+    var ticket_description = $('#tickd_descrip').val();
 
     if ($('#tickd_descrip').summernote('isEmpty')){
         swal("Advertencia!", "Falta Descripción", "warning");
     }else{
-        $.post("../../controller/ticket.php?options=insertdetalle", { ticket_id:ticket_id,usu_id:usu_id,tickd_descrip:tickd_descrip}, function (data) {
+        $.post("../../controller/ticket.php?options=insertDetail", { ticket_id:ticket_id,user_id:user_id,ticket_description:ticket_description}, function (data) {
             listardetalle(ticket_id);
             $('#tickd_descrip').summernote('reset');
             swal("Correcto!", "Registrado Correctamente", "success");

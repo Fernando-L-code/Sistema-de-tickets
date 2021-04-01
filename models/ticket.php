@@ -117,4 +117,21 @@ class Ticket extends Connect
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }
+
+    public function insertTicketDetail($ticket_id, $user_id, $ticket_description)
+    {
+        $connect = parent::Conexion();
+        parent::set_names();
+
+        $sql = "INSERT INTO td_ticketdetalle (detail_id, ticket_id, user_id, ticket_description, date_create, status)  
+        VALUES (NULL, ?, ?, ?, now(), '1');";
+
+
+        $sql = $connect->prepare($sql);
+        $sql->bindValue(1, $ticket_id);
+        $sql->bindValue(2, $user_id);
+        $sql->bindValue(3, $ticket_description);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 }

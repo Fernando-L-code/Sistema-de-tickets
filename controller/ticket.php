@@ -45,7 +45,7 @@
                 $sub_array[] = $row["ticket_id"];
                 $sub_array[] = $row["categori_name"];
                 $sub_array[] = $row["ticket_title"];
-                $sub_array[] = $row["ticket_description"];
+                // $sub_array[] = $row["ticket_description"];
 
                 if($row["ticket_status"]=='Nuevo'){
 
@@ -143,6 +143,9 @@
             }   
         break;
 
+        case "insertDetail":
+            $ticket->insertTicketDetail($_POST["ticket_id"],$_POST["user_id"],$_POST["ticket_description"]);
+        break;
     }
 
 ?>
