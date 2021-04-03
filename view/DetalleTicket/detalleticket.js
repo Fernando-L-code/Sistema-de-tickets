@@ -63,8 +63,8 @@ $(document).on("click","#btnenviar", function(){
 
 $(document).on("click","#btncerrarticket", function(){
     swal({
-        title: "HelpDesk",
-        text: "Esta seguro de Cerrar el Ticket?",
+        title: "¡Advertencia!",
+        text: "¿Esta seguro de Cerrar el Ticket?",
         type: "warning",
         showCancelButton: true,
         confirmButtonClass: "btn-warning",
@@ -75,15 +75,15 @@ $(document).on("click","#btncerrarticket", function(){
     function(isConfirm) {
         if (isConfirm) {
             var ticket_id = getUrlParameter('ID');
-            var usu_id = $('#user_idx').val();
-            $.post("../../controller/ticket.php?options=update", { ticket_id : ticket_id,usu_id : usu_id }, function (data) {
+            var user_id = $('#user_idx').val();
+            $.post("../../controller/ticket.php?options=update", { ticket_id : ticket_id,user_id : user_id }, function (data) {
 
             }); 
 
             listardetalle(ticket_id);
 
             swal({
-                title: "HelpDesk!",
+                title: "",
                 text: "Ticket Cerrado correctamente.",
                 type: "success",
                 confirmButtonClass: "btn-success"
@@ -109,10 +109,10 @@ function listardetalle(ticket_id){
         $('#tick_titulo').val(data.ticket_title);
         $('#tickd_descripusu').summernote ('code',data.ticket_description);
 
-        // console.log( data.tick_estado_texto);
-        // if (data.tick_estado_texto == "Cerrado"){
-        //     $('#pnldetalle').hide();
-        // }
+        console.log( data.ticket_status_txt);
+        if (data.ticket_status_txt == "Cerrado"){
+            $('#pnldetalle').hide();
+        }
     }); 
 }
 

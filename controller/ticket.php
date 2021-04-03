@@ -7,6 +7,11 @@
         case "insert":
             $ticket->insertTicket($_POST["user_id"],$_POST["categori_id"],$_POST["ticket_title"],$_POST["ticket_description"]);
         break;
+
+        case "update":
+            $ticket->updateTicket($_POST["ticket_id"]);
+            $ticket->insertTicketDetail_close($_POST["ticket_id"],$_POST["user_id"] );
+        break;
         
         case "listByUser":
             $datos =  $ticket->listByUser($_POST["user_id"]);
@@ -133,7 +138,7 @@
                         $output["ticket_status"] = '<span class="label label-pill label-danger">Cerrado</span>';
                     }
 
-                    // $output["tick_estado_texto"] = $row["tick_estado"];
+                    $output["ticket_status_txt"] = $row["ticket_status"];
 
                     $output["date_create"] = date("d/m/Y H:i:s", strtotime($row["date_create"]));
                     $output["user_name"] = $row["user_name"];
@@ -146,6 +151,8 @@
         case "insertDetail":
             $ticket->insertTicketDetail($_POST["ticket_id"],$_POST["user_id"],$_POST["ticket_description"]);
         break;
+
+        
     }
 
 ?>
