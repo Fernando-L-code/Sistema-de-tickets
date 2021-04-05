@@ -97,7 +97,7 @@ function listardetalle(ticket_id){
         $('#lbldetalle').html(data);
     }); 
 
-    $.post("../../controller/ticket.php?options=mostrar", { ticket_id : ticket_id }, function (data) {
+    $.post("../../controller/ticket.php?options=show", { ticket_id : ticket_id }, function (data) {
         data = JSON.parse(data);
         $('#lblestado').html(data.ticket_status);
         $('#lblnomusuario').html(data.user_name);

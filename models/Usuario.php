@@ -34,5 +34,95 @@
                 
             }
         }
+
+        public function insert_user($user_name, $user_email, $user_password, $user_rol ){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "INSERT INTO tm_usuario (user_id, user_name, user_email, user_password, user_rol, date_create, date_update, date_delete, status) 
+                    VALUES (NULL,?,?,?,?, now(), NULL, NULL, '1');";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_name);
+            $sql->bindValue(2, $user_email);
+            $sql->bindValue(3, $user_password);
+            $sql->bindValue(4, $user_rol);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function update_user($user_id,$user_name, $user_email, $user_password, $user_rol ){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "UPDATE tm_usuario 
+                    SET 
+                    user_name = ?, 
+                    user_email = ?,
+                    user_password = ?, 
+                    user_rol = ?
+                    WHERE tm_usuario.user_id = ?;";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_name);
+            $sql->bindValue(2, $user_email);
+            $sql->bindValue(3, $user_password);
+            $sql->bindValue(4, $user_rol);
+            $sql->bindValue(5, $user_id);
+            $sql->execute();
+
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function delete_user($user_id){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "UPDATE  tm_usuario 
+            SET 
+                status='0', 
+                date_delete=now() 
+                WHERE 
+            user_id=?;";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_id);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function get_user(){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "SELECT * FROM  tm_usuario  where status=1 ;";
+            $sql = $connect->prepare($sql);
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function get_userById($user_id){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "SELECT * FROM  tm_usuario  where user_id=? ;";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_id);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function get_userById_count($user_id){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "SELECT COUNT(*) AS TOTAL FROM tm_ticket WHERE user_id =1;";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_id);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
     }
 ?>

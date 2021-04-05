@@ -16,11 +16,52 @@
     <?php require_once('../MainNav/nav.php') ?>
     <!--.side-menu-->
 
+	<!-- Contenido -->
 	<div class="page-content">
 		<div class="container-fluid">
-			Blank page.
-		</div><!--.container-fluid-->
-	</div><!--.page-content-->
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="row">
+						<div class="col-sm-4">
+	                        <article class="statistic-box green">
+	                            <div>
+	                                <div class="number" id="lbltotal"></div>
+	                                <div class="caption"><div>Total de Tickets</div></div>
+	                            </div>
+	                        </article>
+	                    </div>
+						<div class="col-sm-4">
+	                        <article class="statistic-box yellow">
+	                            <div>
+	                                <div class="number" id="lbltotalabierto"></div>
+	                                <div class="caption"><div>Total de Tickets Abiertos</div></div>
+	                            </div>
+	                        </article>
+	                    </div>
+						<div class="col-sm-4">
+	                        <article class="statistic-box red">
+	                            <div>
+	                                <div class="number" id="lbltotalcerrado"></div>
+	                                <div class="caption"><div>Total de Tickets Cerrados</div></div>
+	                            </div>
+	                        </article>
+	                    </div>
+					</div>
+				</div>
+			</div>
+
+			<section class="card">
+				<header class="card-header">
+					Grafico Estadístico
+				</header>
+				<div class="card-block">
+					<div id="divgrafico" style="height: 250px;"></div>
+				</div>
+			</section>
+			
+		</div>
+	</div>
+	<!-- Contenido -->
 
 	<!-- JS -->
     <?php require_once('../MainJs/js.php') ?>
