@@ -61,7 +61,38 @@
             }
             echo json_encode($output);
         }   
-    break;
+        break;
+
+        case "total";
+        $datos=$user->get_userById_total($_POST["user_id"]);            
+         if(is_array($datos)==true and count($datos)>0){
+            foreach($datos as $row)
+            {
+                $output["TOTAL"] = $row["TOTAL"];
+            }
+            echo json_encode($output);
+          }   
+        break;
+        case "totalOpen";
+        $datos=$user->get_userById_totalOp($_POST["user_id"]);            
+         if(is_array($datos)==true and count($datos)>0){
+            foreach($datos as $row)
+            {
+                $output["TOTAL"] = $row["TOTAL"];
+            }
+            echo json_encode($output);
+          }   
+        break;
+        case "totalClose";
+        $datos=$user->get_userById_totalCl($_POST["user_id"]);            
+         if(is_array($datos)==true and count($datos)>0){
+            foreach($datos as $row)
+            {
+                $output["TOTAL"] = $row["TOTAL"];
+            }
+            echo json_encode($output);
+          }   
+        break;
 
     }
 

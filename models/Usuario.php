@@ -112,11 +112,34 @@
             return $resultado = $sql->fetchAll();
         }
 
-        public function get_userById_count($user_id){
+        public function get_userById_total($user_id){
             $connect = parent::Conexion();
             parent::set_names();
 
-            $sql = "SELECT COUNT(*) AS TOTAL FROM tm_ticket WHERE user_id =1;";
+            $sql = "SELECT COUNT(*) AS TOTAL FROM tm_ticket WHERE user_id =?;";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_id);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+
+        public function get_userById_totalOp($user_id){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "SELECT COUNT(*) AS TOTAL FROM tm_ticket WHERE user_id =? and ticket_status = 'Nuevo' ";
+            $sql = $connect->prepare($sql);
+            $sql->bindValue(1, $user_id);
+
+            $sql->execute();
+            return $resultado = $sql->fetchAll();
+        }
+        public function get_userById_totalCl($user_id){
+            $connect = parent::Conexion();
+            parent::set_names();
+
+            $sql = "SELECT COUNT(*) AS TOTAL FROM tm_ticket WHERE user_id =? and ticket_status = 'Cerrado' ";
             $sql = $connect->prepare($sql);
             $sql->bindValue(1, $user_id);
 
