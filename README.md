@@ -1,4 +1,3 @@
-# Sistema-de-tickets
+# Sistema-de-tickets. JavaScript y php
 Estructura basica de un sistema de tickets
 
-JavaScript y php
